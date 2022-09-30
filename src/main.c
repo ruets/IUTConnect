@@ -92,7 +92,7 @@ int main(void) {
 
                         // On vérifie l'os et on se connecte en vnc
                         #if defined(_WIN32)
-                            system("./win_softwares/TigerVNC/vncviewer.exe localhost");
+                            system("./win/TigerVNC/vncviewer.exe localhost");
                             #elif defined(__linux__)
                                 system("xtigervncviewer localhost");
                             #elif defined(__APPLE__)
