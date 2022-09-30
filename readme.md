@@ -28,7 +28,7 @@
 > `gcc -std=c99 -Wall -Wextra -g -o ./bin/win ./src/main.c`
 
 - Lancez le script avec la commande suivante :
-> `./bin/win.exe`
+> `bin\win.exe`
 
 </br>
 
@@ -44,7 +44,7 @@
 ### Sous windows :
 
 - Lancez le script avec la commande suivante :
-> `./bin/win.exe`
+> `bin\win.exe`
 
 </br>
 
