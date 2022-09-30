@@ -11,10 +11,10 @@
 
 int main(void) {
     // Importation des données du site avec curl
-    system("curl -s curl https://www-info.iut2.univ-grenoble-alpes.fr/intranet/informations/cellule-info/etat-stations.php > ../tmp/tmp.txt");
+    system("curl https://www-info.iut2.univ-grenoble-alpes.fr/intranet/informations/cellule-info/etat-stations.php > ./tmp/tmp.txt");
 
     // Ouverture du fichier et initialisation du buffer
-    FILE *file = fopen("../tmp/tmp.txt", "r+");
+    FILE *file = fopen("./tmp/tmp.txt", "r+");
     char temp[BUFFER_LEN];
 
     // Vérification des erreurs d'ouverture
@@ -93,19 +93,19 @@ int main(void) {
                         // On vérifie l'os et on se connecte en vnc
                         #if defined(_WIN32)
                             system("win\\TigerVNC\\vncviewer.exe localhost");
-                            #elif defined(__linux__)
-                                system("xtigervncviewer localhost");
-                            #elif defined(__APPLE__)
-                                // Non pris en charge pour le moment
-                                printf("Non pris en charge pour le moment\n");
+                        #elif defined(__linux__)
+                            system("xtigervncviewer localhost");
+                        #elif defined(__APPLE__)
+                            // Non pris en charge pour le moment
+                            printf("Non pris en charge pour le moment\n");
+                            return EXIT_FAILURE;
                         #endif
                         
                     }
                 }
             }
     } else {
-        printf("Les stations sont éteintes !\n");
-        fclose(file);
+        printf("Les stations sont eteintes !\n");
         return EXIT_FAILURE;
     }
     
