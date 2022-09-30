@@ -1,3 +1,8 @@
+/////////////////////////////////////////////////////////////////////////////
+/////   SCRIPT D'AUTOMATISATION DE LA CONNEXION AU RÉSEAU DE L'IUT 2    /////
+/////                     CRÉDITS : SÉBASTIEN RUET                      /////
+/////////////////////////////////////////////////////////////////////////////
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -5,8 +10,11 @@
 #define BUFFER_LEN 1024
 
 int main(void) {
+    // Importation des données du site avec curl
+    system("curl -s curl https://www-info.iut2.univ-grenoble-alpes.fr/intranet/informations/cellule-info/etat-stations.php > ../tmp/tmp.txt");
+
     // Ouverture du fichier et initialisation du buffer
-    FILE *file = fopen("../tmp/temp.txt", "r+");
+    FILE *file = fopen("../tmp/tmp.txt", "r+");
     char temp[BUFFER_LEN];
 
     // Vérification des erreurs d'ouverture
@@ -65,16 +73,33 @@ int main(void) {
     fclose(file);
 
     char cmd[128];
+    char usr_name[32];
+
     // Vérication de l'état des postes
     if (etat_stations == 1) {
         for (unsigned int i = 0; i < nbPostes; i++) {
                 for (int j = 0; j < 100; j++) {
                     if (postes[j].nbUsers == i)
                     {
-                        // On envoie la commande et on quitte le programme
-                        sprintf(cmd, "ssh -f -N -L 5900:%s:5900 NOM_DE_LOGIN@transit.iut2.univ-grenoble-alpes.fr", postes[j].name);
+                        // On demande le nom de l'utilisateur
+                        printf("Entrez votre nom d'utilisateur : ");
+                        scanf("%s", usr_name);
+
+                        // On envoie la commande
+                        sprintf(cmd, "ssh -f -N -L 5900:%s:5900 %s@transit.iut2.univ-grenoble-alpes.fr", postes[j].name, usr_name);
                         system(cmd);
-                        return EXIT_SUCCESS;
+                        printf("Vous êtes connecté au poste %s\n", postes[j].name);
+
+                        // On vérifie l'os et on se connecte en vnc
+                        #if defined(_WIN32)
+                            system("./win_softwares/TigerVNC/vncviewer.exe localhost");
+                            #elif defined(__linux__)
+                                system("xtigervncviewer localhost");
+                            #elif defined(__APPLE__)
+                                // Non pris en charge pour le moment
+                                printf("Non pris en charge pour le moment\n");
+                        #endif
+                        
                     }
                 }
             }
