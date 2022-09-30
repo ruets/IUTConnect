@@ -25,7 +25,7 @@
 - Suivez ce [tutoriel](https://fr.wikihow.com/compiler-un-programme-en-C-avec-le-compilateur-GNU-GCC#Utiliser-MinGW-sous-Windows) pour installer le compilateur gcc :
 
 - Compilez le script avec la commande suivante :
-> `gcc -std=c99 -Wall -Wextra -g -o ./bin/windows.exe ./src/main.c`
+> `gcc -std=c99 -Wall -Wextra -g -o ./bin/win ./src/main.c`
 
 - Lancez le script avec la commande suivante :
 > `./bin/win.exe`
