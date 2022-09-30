@@ -1,4 +1,4 @@
-# Merci d'avoir téléchargé ce script
+# IUTConnect
 
 ## Première utilisation :
 
