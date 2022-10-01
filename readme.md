@@ -1,8 +1,15 @@
 # IUTConnect
 
-## Première utilisation :
+## Fonctionnement et objectif de l'application
+Cette application a pour objectif de vous faciliter la connexion aux stations linux de l'IUT2 de Grenoble.  
+Pour cela, elle sélectionne la station la moins occupée via cette [page](https://www-info.iut2.univ-grenoble-alpes.fr/intranet/informations/cellule-info/etat-stations.php) et vous connecte dessus.  
+Elle ne vous connectera JAMAIS au serveur transit, qui est reservé pour les sessions SSH uniquement.
 
 </br>
+
+
+
+## Première utilisation :
 
 ### Sous linux :
 
@@ -25,6 +32,8 @@
 
 </br>
 
+
+
 ## Utilisation :
 
 ### Sous linux :
@@ -44,6 +53,8 @@
 > `bin\win.exe`
 
 </br>
+
+
 
 ## Problèmes :
 
