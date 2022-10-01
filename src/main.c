@@ -86,7 +86,7 @@ int main(void) {
                         scanf("%s", usr_name);
 
                         // On envoie la commande
-                        sprintf(cmd, "ssh -f -N -L 5900:%s:5900 %s@transit.iut2.univ-grenoble-alpes.fr", postes[j].name, usr_name);
+                        sprintf(cmd, "ssh -fNL 5900:%s:5900 %s@transit.iut2.univ-grenoble-alpes.fr", postes[j].name, usr_name);
                         system(cmd);
                         printf("Vous êtes connecté au poste %s\n", postes[j].name);
 
