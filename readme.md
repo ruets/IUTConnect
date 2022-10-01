@@ -64,7 +64,7 @@
 
 ### Sous windows :
 
-- Ouvrez un terminal à la racine du fichier
+- Ouvrez un terminal à la racine du projet
 
 - Suivez ce [tutoriel](https://fr.wikihow.com/compiler-un-programme-en-C-avec-le-compilateur-GNU-GCC#Utiliser-MinGW-sous-Windows) pour installer le compilateur gcc :
 
