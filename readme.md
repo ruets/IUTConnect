@@ -52,7 +52,7 @@
 - Ouvrez un terminal à la racine du projet
 
 - Compilez le script en lançant la commande suivante à la racine du projet :
-> `gcc -std=c99 -Wall -Wextra -g -o ./bin/linux.sh ./src/main.c`
+> `gcc -std=c99 -Wall -Wextra -g -o ./bin/linux ./src/main.c`
 
 - Rendez exécutable le fichier avec la commande suivante :
 > `chmod +x ./bin/linux.sh`
