@@ -6,10 +6,52 @@
 
 ### Sous linux :
 
+- Ouvrez un terminal à la racine du projet
+
 - Installez tiger-vncviewer avec la commande suivante :  
 > `sudo apt install tigervnc-viewer`
 
-- Compilez le script avec la commande suivante :
+- Lancez le script avec la commande suivante :
+> `./bin/linux`
+
+</br>
+
+### Sous windows :
+
+- Ouvrez un terminal à la racine du projet
+
+- Lancez le script avec la commande suivante :
+> `bin\win.exe`
+
+</br>
+
+## Utilisation :
+
+### Sous linux :
+
+- Ouvrez un terminal à la racine du projet
+
+- Lancez le script avec la commande suivante :
+> `./bin/linux`
+
+</br>
+
+### Sous windows :
+
+- Ouvrez un terminal à la racine du projet
+
+- Lancez le script avec la commande suivante :
+> `bin\win.exe`
+
+</br>
+
+## Problèmes :
+
+### Sous linux :
+
+- Ouvrez un terminal à la racine du projet
+
+- Compilez le script en lançant la commande suivante à la racine du projet :
 > `gcc -std=c99 -Wall -Wextra -g -o ./bin/linux.sh ./src/main.c`
 
 - Rendez exécutable le fichier avec la commande suivante :
@@ -22,6 +64,8 @@
 
 ### Sous windows :
 
+- Ouvrez un terminal à la racine du fichier
+
 - Suivez ce [tutoriel](https://fr.wikihow.com/compiler-un-programme-en-C-avec-le-compilateur-GNU-GCC#Utiliser-MinGW-sous-Windows) pour installer le compilateur gcc :
 
 - Compilez le script avec la commande suivante :
@@ -32,22 +76,4 @@
 
 </br>
 
-## Utilisation :
-
-### Sous linux :
-
-- Lancez le script avec la commande suivante :
-> `./bin/linux`
-
-</br>
-
-### Sous windows :
-
-- Lancez le script avec la commande suivante :
-> `bin\win.exe`
-
-</br>
-
-## Problèmes :
-
-- Si vous rencontrez un problème avec le script, vous pouvez me contacter sur Discord : `STR#8828`
+- Si vos problèmes ne sont toujours pas résolus, vous pouvez me contacter sur Discord : `STR#8828`
