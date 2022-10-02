@@ -27,7 +27,7 @@ int main(void) {
 
     // Création du type Poste
     typedef struct Poste {
-        char name[12];
+        char name[13];
         unsigned int nbUsers;
     } Poste;
 
@@ -39,7 +39,7 @@ int main(void) {
     int etat_stations = 0;
 
     Poste poste_temp;
-    char nb_usrs_temp[2];
+    char nb_usrs_temp[3];
 
     for (int i = 0; !feof(file); i++) {
         // Ligne de type : pc-dg-025-01  up       1:19,     2 users,  load 0.32, 0.40, 0.51
@@ -51,11 +51,11 @@ int main(void) {
             if (strstr(temp, "up") != NULL) {
                 // On récupère le nom du poste
                 strncpy(poste_temp.name, temp, 12);
-                poste_temp.name[12] = '\0';
+                poste_temp.name[13] = '\0';
 
                 // On récupère le nombre d'utilisateurs
                 strncpy(nb_usrs_temp, temp + 32, 2);
-                nb_usrs_temp[2] = '\0';
+                nb_usrs_temp[3] = '\0';
                 poste_temp.nbUsers = atoi(nb_usrs_temp);
 
                 // On ajoute le poste à la liste
