@@ -51,13 +51,13 @@ int main(void) {
             if (strstr(temp, "up") != NULL) {
                 // On récupère le nom du poste
                 strncpy(poste_temp.name, temp, 12);
-                poste_temp.name[13] = '\0';
+                poste_temp.name[12] = '\0';
 
                 // On récupère le nombre d'utilisateurs
                 strncpy(nb_usrs_temp, temp + 32, 2);
-                nb_usrs_temp[3] = '\0';
+                nb_usrs_temp[2] = '\0';
                 poste_temp.nbUsers = atoi(nb_usrs_temp);
-
+                                
                 // On ajoute le poste à la liste
                 postes[nbPostes] = poste_temp;
                 nbPostes++;
@@ -85,16 +85,23 @@ int main(void) {
                         printf("Entrez votre nom d'utilisateur : ");
                         scanf("%s", usr_name);
 
-                        // On envoie la commande
-                        sprintf(cmd, "ssh -fNL 5900:%s:5900 %s@transit.iut2.univ-grenoble-alpes.fr", postes[j].name, usr_name);
-                        system(cmd);
-                        printf("Vous êtes connecté au poste %s\n", postes[j].name);
-
-                        // On vérifie l'os et on se connecte en vnc
+                        // On vérifie l'os et on se connecte en ssh, puis en vnc
                         #if defined(_WIN32)
-                            system("win\\TigerVNC\\vncviewer.exe localhost");
+                            sprintf(cmd, "start /B win\\PuTTy\\putty.exe -N -L 5900:%s:5900 %s@transit.iut2.univ-grenoble-alpes.fr", postes[j].name, usr_name);
+                            system(cmd);
+                            printf("Vous êtes connecté au poste %s avec %d utilisateurs\n", postes[j].name, postes[j].nbUsers);
+                            system("start /wait /B win\\TigerVNC\\vncviewer.exe localhost");
+                            system("taskkill /T /IM putty.exe /F");
+                            return EXIT_SUCCESS;
                         #elif defined(__linux__)
+                        // On envoie la commande
+                            sprintf(cmd, "ssh -fNL 5900:%s:5900 %s@transit.iut2.univ-grenoble-alpes.fr", postes[j].name, usr_name);
+                            system(cmd);
+                            printf("Vous êtes connecté au poste %s avec %d utilisateurs\n", postes[j].name, postes[j].nbUsers);
                             system("xtigervncviewer localhost");
+                            system("wait $(pidof xtigervncviewer)");
+                            system("kill $(pidof ssh)");
+                            return EXIT_SUCCESS;
                         #elif defined(__APPLE__)
                             // Non pris en charge pour le moment
                             printf("Non pris en charge pour le moment\n");
