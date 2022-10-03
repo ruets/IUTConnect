@@ -18,6 +18,9 @@ Elle ne vous connectera JAMAIS au serveur transit, qui est reservé pour les ses
 - Installez tiger-vncviewer avec la commande suivante :  
 > `sudo apt install tigervnc-viewer`
 
+- Rendez exécutable le fichier avec la commande suivante :
+> `chmod +x ./bin/linux.sh`
+
 - Lancez le script avec la commande suivante :
 > `./bin/linux`
 
