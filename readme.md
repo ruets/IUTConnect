@@ -21,6 +21,14 @@ Elle ne vous connectera JAMAIS au serveur transit, qui est reservé pour les ses
 - Lancez le script avec la commande suivante :
 > `./bin/linux`
 
+- Renseigner votre nom d'utilisateur UGA quand il est demandé dans la console
+
+- Entrer 'yes' dans la console afin d'ajouter le serveur SSH parmi les hôtes connus
+
+- Entrer votre mot de passe UGA quand il est demandé dans la console
+
+- Vous connecter normalement à la station avec vos identifiants UGA
+
 </br>
 
 ### Sous windows :
@@ -29,6 +37,14 @@ Elle ne vous connectera JAMAIS au serveur transit, qui est reservé pour les ses
 
 - Lancez le script avec la commande suivante :
 > `bin\win.exe`
+
+- Renseigner votre nom d'utilisateur UGA quand il est demandé dans la console
+
+- Cliquer sur 'Yes' dans la fenêtre PuTTY qui s'ouvre et y rentrer votre mot de passe UGA
+
+- Une fois connecté, cliquer sur 'Yes' dans la fenêtre TigerVNC qui s'ouvre en arrière plan
+
+- Vous connecter normalement à la station avec vos identifiants UGA
 
 </br>
 
@@ -43,6 +59,12 @@ Elle ne vous connectera JAMAIS au serveur transit, qui est reservé pour les ses
 - Lancez le script avec la commande suivante :
 > `./bin/linux`
 
+- Renseigner votre nom d'utilisateur UGA quand il est demandé dans la console
+
+- Entrer votre mot de passe UGA quand il est demandé dans la console
+
+- Vous connecter normalement à la station avec vos identifiants UGA
+
 </br>
 
 ### Sous windows :
@@ -51,6 +73,14 @@ Elle ne vous connectera JAMAIS au serveur transit, qui est reservé pour les ses
 
 - Lancez le script avec la commande suivante :
 > `bin\win.exe`
+
+- Renseigner votre nom d'utilisateur UGA quand il est demandé dans la console
+
+- Rentrer votre mot de passe UGA dans la fenêtre PuTTY qui s'ouvre
+
+- Une fois connecté, cliquer sur 'Yes' dans la fenêtre TigerVNC qui s'ouvre en arrière plan
+
+- Vous connecter normalement à la station avec vos identifiants UGA
 
 </br>
 
